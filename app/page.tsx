@@ -65,7 +65,7 @@ export default function Home() {
 							initial={{ opacity: 0, scale: 0.8 }}
 							animate={{ opacity: 1, scale: 1 }}
 							transition={{ duration: 0.7 }}
-							className="md:w-1/2"
+							className="md:w-1/2 w-full"
 						>
 							<div className="relative">
 								<div className="w-full h-80 md:h-96 bg-gradient-to-br from-primary/20 to-secondary rounded-lg flex items-center justify-center">
@@ -231,7 +231,7 @@ export default function Home() {
 										}}
 									>
 										<Image
-											src="/tech-logos/nextjs.svg"
+											src="/tech-logos/next.svg"
 											alt="Next.js"
 											width={28}
 											height={28}
@@ -266,7 +266,7 @@ export default function Home() {
 							},
 							{
 								name: "Next.js",
-								icon: "/tech-logos/nextjs.svg",
+								icon: "/tech-logos/next.svg",
 								color: "#000000",
 								category: "Frontend",
 							},

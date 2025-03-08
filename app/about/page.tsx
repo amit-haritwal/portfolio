@@ -38,7 +38,7 @@ export default function AboutPage() {
 							<div className="relative">
 								<div className="w-64 h-64 mx-auto overflow-hidden rounded-full border-4 border-primary">
 									<Image
-										src="/placeholder.svg?height=256&width=256"
+										src="/profile.jpg?height=256&width=256"
 										alt="Developer Portrait"
 										width={256}
 										height={256}
@@ -79,7 +79,7 @@ export default function AboutPage() {
 							</p>
 							<p className="text-muted-foreground mb-6">
 								My journey in web development began when I built my first
-								website at the age of 16. Since then, I've worked with startups
+								website at the age of 18. Since then, I've worked with startups
 								and established companies to deliver high-quality digital
 								products that solve real-world problems.
 							</p>
