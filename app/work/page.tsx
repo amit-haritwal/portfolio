@@ -15,7 +15,7 @@ const projects = [
 		title: "Thread Cut",
 		description:
 			"A full-featured online store with payment processing, user authentication, and inventory management.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/threadCut.jpg?height=400&width=600",
 		tags: ["Next.js", "MongoDB", "Stripe", "Tailwind CSS"],
 		githubUrl: "https://github.com",
 		liveUrl: "https://thread-cut.com",
@@ -25,7 +25,7 @@ const projects = [
 		title: "Hotel Website",
 		description:
 			"Created a MERN Stack hotel booking and food ordering platform supporting 500+ concurrent users, with Socket.io for real-time updates and Redux ensuring 25% improved data consistency.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/skyInn.jpg?height=400&width=600",
 		tags: ["React", "Node.js", "Socket.io", "PostgreSQL"],
 		githubUrl: "https://github.com",
 		liveUrl: "https://hotel-sky-inn-front-end-amit-haritwal.vercel.app/",
@@ -35,7 +35,7 @@ const projects = [
 		title: "Salon Port",
 		description:
 			"A dashboard for tracking salons, expenses, and investments with data visualization.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/salon.jpg?height=400&width=600",
 		tags: ["Flask", "SCSS", "MongoDB"],
 		githubUrl: "https://github.com/amit-haritwal/SalonPort",
 		liveUrl: "https://github.com/amit-haritwal/SalonPort",
