@@ -1,11 +1,15 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useHasMounted } from "@/hooks/use-hydration";
 
 export default function AnimatedBackground() {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
+	const hasMounted = useHasMounted();
 
 	useEffect(() => {
+		if (!hasMounted) return;
+		
 		const canvas = canvasRef.current;
 		if (!canvas) return;
 

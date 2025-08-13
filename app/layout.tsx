@@ -6,9 +6,13 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import PageTransition from "@/components/page-transition";
 import CursorFollower from "@/components/cursor-follower";
-import Head from "next/head";
+import ClientOnly from "@/components/client-only";
+import HydrationDebugger from "@/components/hydration-debugger";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+	subsets: ["latin"],
+	display: 'swap', // Improve font loading
+});
 
 export const metadata: Metadata = {
 	title: "Amit Haritwal",
@@ -22,15 +26,19 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<Head>
-				<title>Amit Haritwal</title>
+			<head>
 				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<body className={inter.className}>
-				<CursorFollower />
+				{/* Preload critical resources */}
+				<link rel="preload" href="/profile.jpg" as="image" />
+			</head>
+			<body className={inter.className} suppressHydrationWarning>
+				<HydrationDebugger />
+				<ClientOnly>
+					<CursorFollower />
+				</ClientOnly>
 				<Header />
 				<PageTransition>
-					<main>{children}</main>
+					<main className="min-h-screen">{children}</main>
 				</PageTransition>
 				<Footer />
 			</body>

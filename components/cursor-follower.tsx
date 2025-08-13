@@ -6,8 +6,15 @@ import { motion } from "framer-motion"
 export default function CursorFollower() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isMounted) return
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
       if (!isVisible) setIsVisible(true)
@@ -24,7 +31,11 @@ export default function CursorFollower() {
       window.removeEventListener("mousemove", handleMouseMove)
       document.body.removeEventListener("mouseleave", handleMouseLeave)
     }
-  }, [isVisible])
+  }, [isVisible, isMounted])
+
+  if (!isMounted) {
+    return null
+  }
 
   return (
     <motion.div

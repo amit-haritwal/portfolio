@@ -8,10 +8,16 @@ import {
 	Briefcase,
 	GraduationCap,
 	Globe,
+	Code2,
+	Zap,
+	Heart,
+	Star,
+	Sparkles,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/scroll-reveal";
 import ParallaxSection from "@/components/parallax-section";
 import AnimatedCounter from "@/components/animated-counter";
@@ -19,45 +25,62 @@ import TextAnimation from "@/components/text-animation";
 
 export default function AboutPage() {
 	return (
-		<div className="pt-32 pb-16">
+		<div className=" pb-16 min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
 			<div className="container mx-auto px-4">
-				<section className="mb-20">
-					<TextAnimation
-						text="Amit Haritwal"
-						type="wave"
-						className="text-4xl md:text-5xl font-bold mb-6 text-center"
-					/>
+				{/* Hero Section */}
+				<section className="mb-24">
+					<motion.div
+						initial={{ opacity: 0, y: 30 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8 }}
+						className="text-center mb-16"
+					>
+						<TextAnimation
+							text="About Me"
+							type="wave"
+							className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent"
+						/>
+						<motion.p
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ delay: 0.5, duration: 0.8 }}
+							className="text-xl text-muted-foreground max-w-2xl mx-auto"
+						>
+							Passionate developer crafting exceptional digital experiences with cutting-edge technologies
+						</motion.p>
+					</motion.div>
 
-					<div className="flex flex-col md:flex-row items-center gap-12">
+					<div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 						<motion.div
 							initial={{ opacity: 0, x: -50 }}
 							animate={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.7 }}
-							className="md:w-1/3"
+							transition={{ duration: 0.8, delay: 0.2 }}
+							className="lg:w-1/3 flex-shrink-0"
 						>
-							<div className="relative">
-								<div className="w-64 h-64 mx-auto overflow-hidden rounded-full border-4 border-primary">
+							<div className="relative group max-w-sm mx-auto">
+								<div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+								<div className="relative w-64 h-64 lg:w-80 lg:h-80 mx-auto overflow-hidden rounded-full border-4 border-background bg-background">
 									<Image
-										src="/profile.jpg?height=256&width=256"
-										alt="Developer Portrait"
-										width={256}
-										height={256}
-										className="object-cover"
+										src="/profile.jpg?height=320&width=320"
+										alt="Amit Haritwal - Full Stack Developer"
+										width={320}
+										height={320}
+										className="object-cover transition-transform group-hover:scale-110 duration-500 w-full h-full"
 									/>
 								</div>
 								<motion.div
-									className="absolute -bottom-4 -right-4 bg-background p-3 rounded-full shadow-lg"
+									className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-primary p-3 lg:p-4 rounded-full shadow-2xl"
 									animate={{
-										y: [0, -10, 0],
-										rotate: [0, 10, 0],
+										y: [0, -8, 0],
+										rotate: [0, 5, 0],
 									}}
 									transition={{
 										repeat: Number.POSITIVE_INFINITY,
-										duration: 5,
+										duration: 4,
 										ease: "easeInOut",
 									}}
 								>
-									<Award className="w-8 h-8 text-primary" />
+									<Code2 className="w-6 h-6 lg:w-8 lg:h-8 text-primary-foreground" />
 								</motion.div>
 							</div>
 						</motion.div>
@@ -65,112 +88,176 @@ export default function AboutPage() {
 						<motion.div
 							initial={{ opacity: 0, x: 50 }}
 							animate={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.7 }}
-							className="md:w-2/3"
+							transition={{ duration: 0.8, delay: 0.4 }}
+							className="lg:w-2/3 space-y-6 max-w-none"
 						>
-							<h2 className="text-2xl font-bold mb-4">
-								Full Stack Developer & UI/UX Enthusiast
-							</h2>
-							<p className="text-muted-foreground mb-6">
-								Hello! I'm a passionate full stack developer with over 5 years
-								of experience building modern web applications. I specialize in
-								creating responsive, user-friendly interfaces and robust backend
-								systems.
-							</p>
-							<p className="text-muted-foreground mb-6">
-								My journey in web development began when I built my first
-								website at the age of 18. Since then, I've worked with startups
-								and established companies to deliver high-quality digital
-								products that solve real-world problems.
-							</p>
-							<div className="flex flex-wrap gap-4">
-								<Button asChild>
-									<Link href="/contact">
-										Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
-									</Link>
-								</Button>
-								<Button variant="outline" asChild>
-									<a href="/resume.pdf" download>
-										Download Resume
-									</a>
-								</Button>
+							<div className="bg-card/50 backdrop-blur-sm border rounded-xl p-6 lg:p-8 shadow-xl">
+								<motion.h2 
+									className="text-2xl lg:text-3xl font-bold mb-6 flex items-center gap-3"
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ delay: 0.6 }}
+								>
+									<Sparkles className="w-6 h-6 lg:w-8 lg:h-8 text-primary flex-shrink-0" />
+									Amit Haritwal
+								</motion.h2>
+								
+								<div className="flex flex-wrap gap-2 mb-6">
+									{["Full Stack Developer", "UI/UX Enthusiast", "AI/ML Explorer", "Open Source Contributor"].map((title, index) => (
+										<motion.div
+											key={title}
+											initial={{ opacity: 0, scale: 0.8 }}
+											animate={{ opacity: 1, scale: 1 }}
+											transition={{ delay: 0.8 + index * 0.1 }}
+										>
+											<Badge variant="secondary" className="text-xs lg:text-sm px-2 py-1">
+												{title}
+											</Badge>
+										</motion.div>
+									))}
+								</div>
+
+								<motion.div 
+									className="space-y-4 text-muted-foreground"
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ delay: 1 }}
+								>
+									<p className="leading-relaxed text-sm lg:text-base">
+										Hello! I'm a passionate full stack developer with over 5 years of experience building modern web applications. I specialize in creating responsive, user-friendly interfaces and robust backend systems using cutting-edge technologies.
+									</p>
+									<p className="leading-relaxed text-sm lg:text-base">
+										My journey began when I built my first website at 18, and since then I've worked with startups and established companies to deliver high-quality digital products. I'm particularly excited about working with modern reactive text processing libraries that enable real-time collaborative editing and dynamic content rendering.
+									</p>
+									<p className="leading-relaxed text-sm lg:text-base">
+										Currently pursuing my Master's in Computer Science at UAB, I'm constantly exploring new technologies like AI/ML, advanced React patterns, and modern DevOps practices.
+									</p>
+								</motion.div>
+
+								<motion.div 
+									className="flex flex-col sm:flex-row gap-4 mt-8"
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ delay: 1.2 }}
+								>
+									<Button asChild size="lg" className="group">
+										<Link href="/contact">
+											Get in Touch 
+											<ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+										</Link>
+									</Button>
+									<Button variant="outline" size="lg" asChild>
+										<a href="/resume.pdf" download>
+											Download Resume
+										</a>
+									</Button>
+								</motion.div>
 							</div>
 						</motion.div>
 					</div>
 				</section>
 
 				{/* Skills Section */}
-				<section className="mb-20">
+				<section className="mb-24">
 					<ScrollReveal>
-						<h2 className="text-3xl font-bold mb-12 text-center">My Skills</h2>
+						<div className="text-center mb-16">
+							<h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+								Technical Expertise
+							</h2>
+							<p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+								Specialized in modern technologies and cutting-edge tools to build exceptional digital experiences
+							</p>
+						</div>
 					</ScrollReveal>
 
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
 						{[
 							{
 								title: "Frontend Development",
+								icon: <Code2 className="w-6 h-6" />,
 								skills: [
-									"React",
-									"Next.js",
+									"React & Next.js",
 									"TypeScript",
 									"Tailwind CSS",
 									"Framer Motion",
-									"Redux",
+									"Redux Toolkit",
+									"React Query",
 								],
+								color: "from-blue-500 to-cyan-500",
 							},
 							{
 								title: "Backend Development",
+								icon: <Zap className="w-6 h-6" />,
 								skills: [
-									"Node.js",
-									"Express",
+									"Node.js & Express",
 									"NestJS",
 									"GraphQL",
-									"REST API",
+									"REST APIs",
 									"WebSockets",
+									"Microservices",
 								],
+								color: "from-green-500 to-emerald-500",
 							},
 							{
 								title: "Database & DevOps",
+								icon: <Globe className="w-6 h-6" />,
 								skills: [
 									"MongoDB",
 									"PostgreSQL",
 									"Redis",
 									"Docker",
-									"AWS",
-									"CI/CD",
+									"AWS & GCP",
+									"CI/CD Pipelines",
 								],
+								color: "from-purple-500 to-pink-500",
+							},
+							{
+								title: "Specialized Tools",
+								icon: <Sparkles className="w-6 h-6" />,
+								skills: [
+									"Reactive Text Processing",
+									"AI/ML Integration",
+									"Firebase",
+									"Vercel",
+									"Three.js",
+									"WebRTC",
+								],
+								color: "from-orange-500 to-red-500",
 							},
 						].map((category, index) => (
 							<ScrollReveal
 								key={category.title}
-								delay={index * 0.2}
-								direction={index % 2 === 0 ? "left" : "right"}
+								delay={index * 0.15}
 							>
 								<motion.div
-									whileHover={{ y: -10 }}
-									className="bg-card border rounded-lg p-6 hover:shadow-md transition-shadow"
+									whileHover={{ y: -5 }}
+									className="group relative bg-card/50 backdrop-blur-sm border rounded-xl p-5 hover:shadow-lg transition-all duration-300 h-full flex flex-col"
 								>
-									<h3 className="text-xl font-bold mb-4">{category.title}</h3>
-									<ul className="space-y-2">
+									{/* Gradient background */}
+									<div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl`}></div>
+									
+									{/* Icon with gradient */}
+									<div className={`relative inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br ${category.color} text-white mb-4 shadow-md flex-shrink-0`}>
+										{category.icon}
+									</div>
+									
+									<h3 className="relative text-lg font-semibold mb-4 text-foreground group-hover:text-primary transition-colors">
+										{category.title}
+									</h3>
+									
+									<ul className="relative space-y-2 flex-1">
 										{category.skills.map((skill, skillIndex) => (
-											<motion.li
+											<li
 												key={skill}
-												className="flex items-center"
-												initial={{ opacity: 0, x: -20 }}
-												animate={{ opacity: 1, x: 0 }}
-												transition={{ delay: 0.5 + skillIndex * 0.1 }}
+												className="flex items-center text-sm"
 											>
-												<motion.div
-													className="w-2 h-2 bg-primary rounded-full mr-2"
-													animate={{ scale: [1, 1.5, 1] }}
-													transition={{
-														duration: 1,
-														repeat: Number.POSITIVE_INFINITY,
-														repeatDelay: 1,
-													}}
-												></motion.div>
-												{skill}
-											</motion.li>
+												<div
+													className={`w-1.5 h-1.5 rounded-full mr-2 bg-gradient-to-r ${category.color} flex-shrink-0`}
+												></div>
+												<span className="text-muted-foreground group-hover:text-foreground transition-colors leading-relaxed">
+													{skill}
+												</span>
+											</li>
 										))}
 									</ul>
 								</motion.div>
@@ -180,30 +267,44 @@ export default function AboutPage() {
 				</section>
 
 				{/* Stats Section */}
-				<ParallaxSection className="mb-20 py-16 bg-muted rounded-lg">
-					<div className="container mx-auto px-4">
+				<ParallaxSection className="mb-24 py-16 relative overflow-hidden">
+					{/* Background gradient */}
+					<div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-purple-500/10 to-pink-500/10"></div>
+					
+					<div className="container mx-auto px-4 relative z-10">
 						<ScrollReveal>
-							<h2 className="text-3xl font-bold mb-12 text-center">
-								By the Numbers
-							</h2>
+							<div className="text-center mb-12">
+								<h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+									Achievement Highlights
+								</h2>
+								<p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+									Numbers that reflect my journey and commitment to excellence
+								</p>
+							</div>
 						</ScrollReveal>
 
-						<div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+						<div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center max-w-4xl mx-auto">
 							{[
-								{ value: 5, label: "Years Experience" },
-								{ value: 10, label: "Projects Completed" },
-								{ value: 4, label: "Happy Clients" },
-								{ value: 20, label: "Coffee Cups" },
+								{ value: 5, label: "Years Experience", suffix: "+", icon: <Award className="w-6 h-6" /> },
+								{ value: 25, label: "Projects Completed", suffix: "+", icon: <Code2 className="w-6 h-6" /> },
+								{ value: 15, label: "Happy Clients", suffix: "+", icon: <Heart className="w-6 h-6" /> },
+								{ value: 500, label: "Coffee Cups", suffix: "+", icon: <Zap className="w-6 h-6" /> },
 							].map((stat, index) => (
 								<ScrollReveal key={stat.label} delay={index * 0.1}>
-									<div className="p-4">
+									<motion.div 
+										className="bg-card/50 backdrop-blur-sm border rounded-xl p-4 md:p-6 hover:bg-card/70 transition-all duration-300"
+										whileHover={{ y: -5 }}
+									>
+										<div className="text-primary mb-3 flex justify-center">
+											{stat.icon}
+										</div>
 										<AnimatedCounter
 											end={stat.value}
-											className="text-4xl md:text-5xl font-bold text-primary mb-2"
-											suffix={stat.label === "Coffee Cups" ? "+" : ""}
+											className="text-2xl md:text-3xl font-bold text-foreground mb-1 block"
+											suffix={stat.suffix}
 										/>
-										<p className="text-muted-foreground">{stat.label}</p>
-									</div>
+										<p className="text-muted-foreground text-xs md:text-sm font-medium">{stat.label}</p>
+									</motion.div>
 								</ScrollReveal>
 							))}
 						</div>
@@ -211,153 +312,134 @@ export default function AboutPage() {
 				</ParallaxSection>
 
 				{/* Experience Section */}
-				<section className="mb-20">
-					<motion.h2
+				<section className="mb-24">
+					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
 						viewport={{ once: true }}
-						className="text-3xl font-bold mb-12 text-center"
+						className="text-center mb-16"
 					>
-						Experience & Education
-					</motion.h2>
+						<h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+							Professional Journey
+						</h2>
+						<p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+							My career evolution through meaningful experiences and continuous learning
+						</p>
+					</motion.div>
 
-					<div className="grid md:grid-cols-2 gap-12">
-						<div>
+					<div className="grid lg:grid-cols-2 gap-12">
+						{/* Work Experience */}
+						<div className="space-y-8">
 							<div className="flex items-center mb-8">
-								<Briefcase className="w-6 h-6 mr-2 text-primary" />
+								<div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+									<Briefcase className="w-5 h-5 text-white" />
+								</div>
 								<h3 className="text-2xl font-bold">Work Experience</h3>
 							</div>
 
-							<div className="space-y-8">
-								<motion.div
-									initial={{ opacity: 0, x: -20 }}
-									whileInView={{ opacity: 1, x: 0 }}
-									transition={{ duration: 0.5 }}
-									viewport={{ once: true }}
-									className="border-l-2 border-primary pl-6 relative"
-								>
-									<div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
-									<h4 className="text-xl font-semibold">
-										Senior Full Stack Developer
-									</h4>
-									<p className="text-muted-foreground">
-										Global Lancers | September 2023 - June 2024
-									</p>
-									<p className="mt-2">
-										Led development of multiple web applications using React,
-										Next.js, and Node.js. Implemented CI/CD pipelines and
-										mentored junior developers.
-									</p>
-								</motion.div>
-
-								<motion.div
-									initial={{ opacity: 0, x: -20 }}
-									whileInView={{ opacity: 1, x: 0 }}
-									transition={{ duration: 0.5, delay: 0.2 }}
-									viewport={{ once: true }}
-									className="border-l-2 border-primary pl-6 relative"
-								>
-									<div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
-									<h4 className="text-xl font-semibold">
-										Full Stack Developer
-									</h4>
-									<p className="text-muted-foreground">
-										Imonology | March 2023 - May 2023
-									</p>
-									<p className="mt-2">
-										Developed and maintained client websites and web
-										applications. Worked with React, Express, and MongoDB to
-										create scalable solutions.
-									</p>
-								</motion.div>
-
-								<motion.div
-									initial={{ opacity: 0, x: -20 }}
-									whileInView={{ opacity: 1, x: 0 }}
-									transition={{ duration: 0.5, delay: 0.4 }}
-									viewport={{ once: true }}
-									className="border-l-2 border-primary pl-6 relative"
-								>
-									<div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
-									<h4 className="text-xl font-semibold">Frontend Developer</h4>
-									<p className="text-muted-foreground">
-										Appykan | August 2022 - August 2023
-									</p>
-									<p className="mt-2">
-										Built responsive user interfaces using React and CSS.
-										Collaborated with designers to implement pixel-perfect
-										designs.
-									</p>
-								</motion.div>
+							<div className="space-y-6">
+								{[
+									{
+										title: "Senior Full Stack Developer",
+										company: "Global Lancers",
+										period: "September 2023 - June 2024",
+										description: "Led development of multiple web applications using React, Next.js, and Node.js. Implemented CI/CD pipelines, mentored junior developers, and worked extensively with collaborative editing features.",
+										skills: ["React", "Next.js", "Node.js", "Collaboration Tools", "CI/CD"],
+									},
+									{
+										title: "Full Stack Developer",
+										company: "Imonology",
+										period: "March 2023 - May 2023",
+										description: "Developed and maintained client websites and web applications. Worked with React, Express, and MongoDB to create scalable solutions with real-time features.",
+										skills: ["React", "Express", "MongoDB", "Real-time Features"],
+									},
+									{
+										title: "Frontend Developer",
+										company: "Appykan",
+										period: "August 2022 - August 2023",
+										description: "Built responsive user interfaces using React and CSS. Collaborated with designers to implement pixel-perfect designs and integrated dynamic content rendering.",
+										skills: ["React", "CSS", "Dynamic Content", "UI/UX"],
+									},
+								].map((job, index) => (
+									<motion.div
+										key={job.title}
+										initial={{ opacity: 0, x: -20 }}
+										whileInView={{ opacity: 1, x: 0 }}
+										transition={{ duration: 0.5, delay: index * 0.1 }}
+										viewport={{ once: true }}
+										className="relative"
+									>
+										<div className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary to-purple-600 rounded-full"></div>
+										<div className="absolute -left-1 top-2 w-3 h-3 bg-primary rounded-full border-2 border-background shadow-sm"></div>
+										
+										<div className="ml-6 bg-card/50 backdrop-blur-sm border rounded-lg p-4 hover:shadow-lg transition-all duration-300">
+											<h4 className="text-lg font-semibold mb-1">{job.title}</h4>
+											<p className="text-primary font-medium mb-1 text-sm">{job.company}</p>
+											<p className="text-xs text-muted-foreground mb-3">{job.period}</p>
+											<p className="text-muted-foreground mb-3 text-sm leading-relaxed">{job.description}</p>
+											<div className="flex flex-wrap gap-1">
+												{job.skills.map((skill) => (
+													<Badge key={skill} variant="secondary" className="text-xs px-2 py-0.5">
+														{skill}
+													</Badge>
+												))}
+											</div>
+										</div>
+									</motion.div>
+								))}
 							</div>
 						</div>
 
-						<div>
+						{/* Education */}
+						<div className="space-y-8">
 							<div className="flex items-center mb-8">
-								<GraduationCap className="w-6 h-6 mr-2 text-primary" />
+								<div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+									<GraduationCap className="w-5 h-5 text-white" />
+								</div>
 								<h3 className="text-2xl font-bold">Education</h3>
 							</div>
 
-							<div className="space-y-8">
-								<motion.div
-									initial={{ opacity: 0, x: 20 }}
-									whileInView={{ opacity: 1, x: 0 }}
-									transition={{ duration: 0.5 }}
-									viewport={{ once: true }}
-									className="border-l-2 border-primary pl-6 relative"
-								>
-									<div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
-									<h4 className="text-xl font-semibold">
-										Master's in Computer Science
-									</h4>
-									<p className="text-muted-foreground">
-										University of Alabama at Birmingham | 2024 - 2026
-									</p>
-									<p className="mt-2">
-										Specialized in Web Technologies and Software Engineering.
-									</p>
-								</motion.div>
-
-								<motion.div
-									initial={{ opacity: 0, x: 20 }}
-									whileInView={{ opacity: 1, x: 0 }}
-									transition={{ duration: 0.5, delay: 0.2 }}
-									viewport={{ once: true }}
-									className="border-l-2 border-primary pl-6 relative"
-								>
-									<div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
-									<h4 className="text-xl font-semibold">
-										Bachelor's in Computer Science
-									</h4>
-									<p className="text-muted-foreground">
-										Poornima College of Engineering | 2018 - 2022
-									</p>
-									<p className="mt-2">
-										Focused on programming fundamentals, data structures, and
-										algorithms. Participated in coding competitions.
-									</p>
-								</motion.div>
-
-								<motion.div
-									initial={{ opacity: 0, x: 20 }}
-									whileInView={{ opacity: 1, x: 0 }}
-									transition={{ duration: 0.5, delay: 0.4 }}
-									viewport={{ once: true }}
-									className="border-l-2 border-primary pl-6 relative"
-								>
-									<div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
-									<h4 className="text-xl font-semibold">
-										Online Certifications
-									</h4>
-									<p className="text-muted-foreground">
-										Various Platforms | 2016 - Present
-									</p>
-									<p className="mt-2">
-										Continuously learning through platforms like Coursera,
-										Udemy, and freeCodeCamp. Certified in React, and Node.js.
-									</p>
-								</motion.div>
+							<div className="space-y-6">
+								{[
+									{
+										degree: "Master's in Computer Science",
+										institution: "University of Alabama at Birmingham",
+										period: "2024 - 2026",
+										description: "Specialized in Web Technologies, Software Engineering, and Advanced Data Structures. Research focus on collaborative text editing systems and real-time synchronization.",
+									},
+									{
+										degree: "Bachelor's in Computer Science",
+										institution: "Poornima College of Engineering",
+										period: "2018 - 2022",
+										description: "Focused on programming fundamentals, data structures, and algorithms. Participated in coding competitions and built several collaborative editing projects using modern web technologies.",
+									},
+									{
+										degree: "Online Certifications",
+										institution: "Various Platforms",
+										period: "2016 - Present",
+										description: "Continuously learning through platforms like Coursera, Udemy, and freeCodeCamp. Certified in React, Node.js, and specialized training in modern web development.",
+									},
+								].map((edu, index) => (
+									<motion.div
+										key={edu.degree}
+										initial={{ opacity: 0, x: 20 }}
+										whileInView={{ opacity: 1, x: 0 }}
+										transition={{ duration: 0.5, delay: index * 0.1 }}
+										viewport={{ once: true }}
+										className="relative"
+									>
+										<div className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-green-500 to-emerald-600 rounded-full"></div>
+										<div className="absolute -left-1 top-2 w-3 h-3 bg-green-500 rounded-full border-2 border-background shadow-sm"></div>
+										
+										<div className="ml-6 bg-card/50 backdrop-blur-sm border rounded-lg p-4 hover:shadow-lg transition-all duration-300">
+											<h4 className="text-lg font-semibold mb-1">{edu.degree}</h4>
+											<p className="text-green-600 font-medium mb-1 text-sm">{edu.institution}</p>
+											<p className="text-xs text-muted-foreground mb-3">{edu.period}</p>
+											<p className="text-muted-foreground text-sm leading-relaxed">{edu.description}</p>
+										</div>
+									</motion.div>
+								))}
 							</div>
 						</div>
 					</div>
@@ -365,51 +447,97 @@ export default function AboutPage() {
 
 				{/* Personal Interests */}
 				<section>
-					<motion.h2
+					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
 						viewport={{ once: true }}
-						className="text-3xl font-bold mb-12 text-center"
+						className="text-center mb-16"
 					>
-						When I'm Not Coding
-					</motion.h2>
+						<h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+							Beyond the Code
+						</h2>
+						<p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+							Exploring life beyond development to stay inspired and creative
+						</p>
+					</motion.div>
 
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
 						{[
 							{
-								icon: <BookOpen className="w-10 h-10 text-primary" />,
-								title: "Reading",
-								description:
-									"I enjoy reading books on technology, science fiction, and personal development.",
+								icon: <BookOpen className="w-8 h-8" />,
+								title: "Reading & Research",
+								description: "I enjoy reading books on technology, science fiction, and personal development. Currently researching advanced collaborative editing algorithms and modern optimization techniques.",
+								color: "from-blue-500 to-cyan-500",
 							},
 							{
-								icon: <Globe className="w-10 h-10 text-primary" />,
-								title: "Traveling",
-								description:
-									"Exploring new places and experiencing different cultures broadens my perspective.",
+								icon: <Globe className="w-8 h-8" />,
+								title: "Traveling & Culture",
+								description: "Exploring new places and experiencing different cultures broadens my perspective and brings fresh ideas to my development work.",
+								color: "from-green-500 to-emerald-500",
 							},
 							{
-								icon: <Award className="w-10 h-10 text-primary" />,
+								icon: <Heart className="w-8 h-8" />,
 								title: "Open Source",
-								description:
-									"I contribute to open source projects and believe in giving back to the community.",
+								description: "I contribute to open source projects, especially those related to collaborative editing and modern web implementations. Believe in giving back to the developer community.",
+								color: "from-purple-500 to-pink-500",
 							},
 						].map((interest, index) => (
 							<motion.div
 								key={interest.title}
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.5, delay: index * 0.2 }}
+								transition={{ duration: 0.5, delay: index * 0.1 }}
 								viewport={{ once: true }}
-								className="bg-card border rounded-lg p-6 text-center hover:shadow-md transition-shadow"
+								whileHover={{ y: -5 }}
+								className="group relative bg-card/50 backdrop-blur-sm border rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 h-full flex flex-col"
 							>
-								<div className="flex justify-center mb-4">{interest.icon}</div>
-								<h3 className="text-xl font-semibold mb-2">{interest.title}</h3>
-								<p className="text-muted-foreground">{interest.description}</p>
+								{/* Gradient background */}
+								<div className={`absolute inset-0 bg-gradient-to-br ${interest.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl`}></div>
+								
+								{/* Icon with gradient */}
+								<div className={`relative inline-flex items-center justify-center w-16 h-16 rounded-lg bg-gradient-to-br ${interest.color} text-white mb-4 shadow-lg mx-auto flex-shrink-0`}>
+									{interest.icon}
+								</div>
+								
+								<h3 className="relative text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
+									{interest.title}
+								</h3>
+								<p className="relative text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300 text-sm flex-1">
+									{interest.description}
+								</p>
 							</motion.div>
 						))}
 					</div>
+
+					{/* Call to action */}
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5, delay: 0.3 }}
+						viewport={{ once: true }}
+						className="text-center mt-12"
+					>
+						<div className="bg-gradient-to-r from-primary/5 via-purple-500/5 to-pink-500/5 border border-primary/20 rounded-xl p-6 max-w-3xl mx-auto">
+							<h3 className="text-xl md:text-2xl font-bold mb-3">Let's Build Something Amazing Together</h3>
+							<p className="text-muted-foreground mb-6 text-sm md:text-base leading-relaxed">
+								Ready to collaborate on your next project? Whether it's implementing collaborative features or building a complete web application, I'm here to help bring your vision to life.
+							</p>
+							<div className="flex flex-col sm:flex-row gap-3 justify-center">
+								<Button asChild size="lg" className="group">
+									<Link href="/contact">
+										Start a Conversation
+										<ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+									</Link>
+								</Button>
+								<Button variant="outline" size="lg" asChild>
+									<Link href="/work">
+										View My Work
+									</Link>
+								</Button>
+							</div>
+						</div>
+					</motion.div>
 				</section>
 			</div>
 		</div>

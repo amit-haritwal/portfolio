@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
+import { useHasMounted } from "@/hooks/use-hydration"
 
 interface TextAnimationProps {
   text: string
@@ -13,8 +14,11 @@ interface TextAnimationProps {
 export default function TextAnimation({ text, className = "", delay = 0, type = "reveal" }: TextAnimationProps) {
   const [displayText, setDisplayText] = useState("")
   const [currentIndex, setCurrentIndex] = useState(0)
+  const hasMounted = useHasMounted()
 
   useEffect(() => {
+    if (!hasMounted) return
+    
     if (type === "typing") {
       if (currentIndex < text.length) {
         const timeout = setTimeout(() => {
@@ -25,7 +29,12 @@ export default function TextAnimation({ text, className = "", delay = 0, type = 
         return () => clearTimeout(timeout)
       }
     }
-  }, [currentIndex, text, type])
+  }, [currentIndex, text, type, hasMounted])
+
+  // Show static text during SSR/hydration
+  if (!hasMounted) {
+    return <div className={className}>{text}</div>
+  }
 
   if (type === "typing") {
     return (

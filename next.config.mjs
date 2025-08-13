@@ -16,11 +16,19 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Help with hydration issues
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+    optimizeCss: true, // Optimize CSS loading
   },
+  // Improve performance and reduce hydration issues
+  poweredByHeader: false,
+  reactStrictMode: true,
 }
 
 mergeConfig(nextConfig, userConfig)
