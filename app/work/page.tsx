@@ -22,10 +22,9 @@ const projects = [
 		title: "MelodyMatch",
 		description:
 			"Shazam-like real-time audio recognition system using FFT and peak detection. Deployed on Vercel with Flask backend. Can identify songs and retrieve timestamps where specific lyrics occur.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/music-app.png",
 		tags: ["Python", "Flask", "FFT", "MongoDB", "Vercel", "Audio Processing"],
-		githubUrl: "https://github.com",
-		liveUrl: "https://melodymat-ch.vercel.app",
+		liveUrl: "https://melodymatch.vercel.app",
 		category: "ai-ml",
 	},
 	{
@@ -33,10 +32,9 @@ const projects = [
 		title: "Speaker Diarization Model",
 		description:
 			"Trained from scratch using VoxCeleb1 dataset. Includes custom feature extraction, embeddings, and clustering. Uses minimal libraries and LoRA fine-tuning.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/speech-dialiation.avif?height=400&width=600",
 		tags: ["Python", "PyTorch", "VoxCeleb1", "LoRA", "Deep Learning", "NLP"],
-		githubUrl: "https://github.com",
-		liveUrl: "https://github.com",
+		liveUrl: "https://github.com/vijay0019/FDS_final_project",
 		category: "ai-ml",
 	},
 	{
@@ -44,10 +42,9 @@ const projects = [
 		title: "Playlist Generation AI",
 		description:
 			"Neural network trained on 1,000 playlists (66,000 songs). Generates playlists from a set of 100 seeder songs. Designed without playlist IDs for seed songs.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/playlist-rec.jpeg?height=400&width=600",
 		tags: ["Python", "Neural Networks", "Machine Learning", "Music AI"],
-		githubUrl: "https://github.com",
-		liveUrl: "https://github.com",
+		liveUrl: "https://github.com/amit-haritwal/spotify-frontend",
 		category: "ai-ml",
 	},
 	{
@@ -55,10 +52,9 @@ const projects = [
 		title: "Deep Learning Mail Labeling System",
 		description:
 			"Classifies emails by assigning a one- or two-word description (not fixed categories). Planned conversion into a browser extension for public use.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/label-gen.avif?height=400&width=600",
 		tags: ["Python", "Deep Learning", "NLP", "Email Classification", "Browser Extension"],
-		githubUrl: "https://github.com",
-		liveUrl: "https://github.com",
+		liveUrl: "https://github.com/amit-haritwal/EmailLabelingBackend",
 		category: "ai-ml",
 	},
 	
@@ -70,7 +66,6 @@ const projects = [
 			"Built with Next.js & Firebase. Custom order placement & retrieval system with speech dilation. Five-member team project focused on specialized components.",
 		image: "/projectImages/threadCut.jpg?height=400&width=600",
 		tags: ["Next.js", "Firebase", "Team Project", "E-commerce"],
-		githubUrl: "https://github.com",
 		liveUrl: "https://thread-cut.com",
 		category: "web-app",
 	},
@@ -79,10 +74,9 @@ const projects = [
 		title: "Travel Planner AI Website",
 		description:
 			"Generates complete car/bike trip itineraries with food stops, photo spots, and attractions. Uses Firebase for storage & Next.js for frontend. Results are location-specific and generated using deep learning.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/Ai-planner.webp?height=400&width=600",
 		tags: ["Next.js", "Firebase", "AI", "Travel Planning", "Deep Learning"],
-		githubUrl: "https://github.com",
-		liveUrl: "https://github.com",
+		liveUrl: "https://github.com/amit-haritwal/tripad-ai",
 		category: "web-app",
 	},
 	{
@@ -90,10 +84,9 @@ const projects = [
 		title: "Pi Sequence Search Website",
 		description:
 			"Searches for an 8-digit sequence within the first 10 billion digits of Pi. Uses indexed storage for ultra-fast retrieval. Features animations & interactive background for better UX.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/pi-gererater.webp?height=400&width=600",
 		tags: ["Next.js", "Indexed Storage", "Mathematics", "Animation", "Search"],
-		githubUrl: "https://github.com",
-		liveUrl: "https://github.com",
+		liveUrl: "https://pi-finder.vercel.app/",
 		category: "web-app",
 	},
 	{
@@ -101,9 +94,8 @@ const projects = [
 		title: "Portfolio Website",
 		description:
 			"Modern Next.js portfolio website built with Framer animations. Responsive, modern design with interactive UI and smooth transitions.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/portfolio.png?height=400&width=600",
 		tags: ["Next.js", "Framer Motion", "Tailwind CSS", "Responsive Design"],
-		githubUrl: "https://github.com",
 		liveUrl: "https://amit-haritwal.vercel.app",
 		category: "web-app",
 	},
@@ -114,7 +106,6 @@ const projects = [
 			"Created a MERN Stack hotel booking and food ordering platform supporting 500+ concurrent users, with Socket.io for real-time updates and Redux ensuring 25% improved data consistency.",
 		image: "/projectImages/skyInn.jpg?height=400&width=600",
 		tags: ["React", "Node.js", "Socket.io", "PostgreSQL", "Redux"],
-		githubUrl: "https://github.com",
 		liveUrl: "https://hotel-sky-inn-front-end-amit-haritwal.vercel.app/",
 		category: "web-app",
 	},
@@ -125,7 +116,6 @@ const projects = [
 			"A dashboard for tracking salons, expenses, and investments with data visualization and comprehensive business analytics.",
 		image: "/projectImages/salon.jpg?height=400&width=600",
 		tags: ["Flask", "SCSS", "MongoDB", "Data Visualization"],
-		githubUrl: "https://github.com/amit-haritwal/SalonPort",
 		liveUrl: "https://github.com/amit-haritwal/SalonPort",
 		category: "web-app",
 	},
@@ -136,10 +126,9 @@ const projects = [
 		title: "Publix Bill Scanner",
 		description:
 			"Captures bill images, runs OCR, and extracts itemized data. Displays extracted info in a local web app for easy expense tracking.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/publix-bill-scanner.webp?height=400&width=600",
 		tags: ["Python", "OCR", "Computer Vision", "OpenCV", "Flask"],
-		githubUrl: "https://github.com",
-		liveUrl: "https://github.com",
+		liveUrl: "https://github.com/amit-haritwal",
 		category: "cv-ocr",
 	},
 
@@ -149,10 +138,9 @@ const projects = [
 		title: "Custom Version Control System",
 		description:
 			"Git-like version control system implementing add, merge, commit, and push features. Built from scratch to understand Git internals and distributed version control.",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/projectImages/git-version.png?height=400&width=600",
 		tags: ["Python", "Git", "Version Control", "System Design", "Data Structures"],
-		githubUrl: "https://github.com",
-		liveUrl: "https://github.com",
+		liveUrl: "https://github.com/amit-haritwal",
 		category: "systems",
 	},
 ];
@@ -215,7 +203,7 @@ export default function WorkPage() {
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.3 }}
-							className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12"
+							className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-3xl mx-auto mb-12"
 						>
 							<div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-4 hover:shadow-lg transition-all duration-300">
 								<div className="text-2xl md:text-3xl font-bold text-primary">{projects.length}</div>
@@ -232,6 +220,10 @@ export default function WorkPage() {
 							<div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-4 hover:shadow-lg transition-all duration-300">
 								<div className="text-2xl md:text-3xl font-bold text-purple-500">{Array.from(new Set(projects.flatMap(p => p.tags))).length}</div>
 								<div className="text-sm text-muted-foreground">Technologies</div>
+							</div>
+							<div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-4 hover:shadow-lg transition-all duration-300">
+								<div className="text-2xl md:text-3xl font-bold text-red-500">400k +</div>
+								<div className="text-sm text-muted-foreground">Lines of Code</div>
 							</div>
 						</motion.div>
 
@@ -414,7 +406,7 @@ export default function WorkPage() {
 															<span className="font-medium">Live Demo</span>
 														</Link>
 													</Button>
-													<Button 
+													{/* <Button 
 														variant="outline" 
 														size="sm" 
 														asChild
@@ -423,7 +415,7 @@ export default function WorkPage() {
 														<Link href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="p-3">
 															<Github className="h-4 w-4" />
 														</Link>
-													</Button>
+													</Button> */}
 												</div>
 											</div>
 										</div>
