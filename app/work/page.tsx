@@ -19,6 +19,26 @@ const projects = [
 	// AI / Machine Learning Projects
 	{
 		id: 1,
+		title: "CloudMCP",
+		description:
+			"This system acts as a bridge between AI Agents and multi-cloud environments (AWS, GCP, Azure), enabling standardized communication, orchestration, and deployment. By leveraging the MCP protocol, the server supports agent-driven automation, while the RESTful API layer ensures seamless integration with web frontends (Next.js) and administrator tooling.",
+		image: "/projectImages/mcp.webp",
+		tags: ["Python", "Flask", "MCP", "MongoDB", "Vercel", "AWS", "GCP", "Azure"],
+		liveUrl: "https://github.com/amit-haritwal/Cloud_MCP_Backend",
+		category: "ai-ml",
+	},
+	{
+		id: 2,
+		title: "ZanzarRotery",
+		description:
+			"this a ticket booking platform for a envent called zanzar rotery which is a lottery event held in zanzibar every year. The platform allows users to book tickets for the event and also provides an admin panel for managing the event.",
+		image: "/projectImages/zanzar.png",
+		tags: ["Next.js", "Mode.js", "MongoDB", "Vercel", "AWS"],
+		liveUrl: "https://zanzarrotary.com/",
+		category: "web-app",
+	},
+	{
+		id: 3,
 		title: "MelodyMatch",
 		description:
 			"Shazam-like real-time audio recognition system using FFT and peak detection. Deployed on Vercel with Flask backend. Can identify songs and retrieve timestamps where specific lyrics occur.",
@@ -28,7 +48,7 @@ const projects = [
 		category: "ai-ml",
 	},
 	{
-		id: 2,
+		id: 4,
 		title: "Speaker Diarization Model",
 		description:
 			"Trained from scratch using VoxCeleb1 dataset. Includes custom feature extraction, embeddings, and clustering. Uses minimal libraries and LoRA fine-tuning.",
@@ -38,7 +58,7 @@ const projects = [
 		category: "ai-ml",
 	},
 	{
-		id: 3,
+		id: 5,
 		title: "Playlist Generation AI",
 		description:
 			"Neural network trained on 1,000 playlists (66,000 songs). Generates playlists from a set of 100 seeder songs. Designed without playlist IDs for seed songs.",
@@ -48,7 +68,7 @@ const projects = [
 		category: "ai-ml",
 	},
 	{
-		id: 4,
+		id: 6,
 		title: "Deep Learning Mail Labeling System",
 		description:
 			"Classifies emails by assigning a one- or two-word description (not fixed categories). Planned conversion into a browser extension for public use.",
@@ -60,7 +80,7 @@ const projects = [
 	
 	// Web & App Development Projects
 	{
-		id: 5,
+		id: 7,
 		title: "Thread Cut",
 		description:
 			"Built with Next.js & Firebase. Custom order placement & retrieval system with speech dilation. Five-member team project focused on specialized components.",
@@ -70,7 +90,7 @@ const projects = [
 		category: "web-app",
 	},
 	{
-		id: 6,
+		id: 8,
 		title: "Travel Planner AI Website",
 		description:
 			"Generates complete car/bike trip itineraries with food stops, photo spots, and attractions. Uses Firebase for storage & Next.js for frontend. Results are location-specific and generated using deep learning.",
@@ -80,7 +100,7 @@ const projects = [
 		category: "web-app",
 	},
 	{
-		id: 7,
+		id: 9,
 		title: "Pi Sequence Search Website",
 		description:
 			"Searches for an 8-digit sequence within the first 10 billion digits of Pi. Uses indexed storage for ultra-fast retrieval. Features animations & interactive background for better UX.",
@@ -90,7 +110,7 @@ const projects = [
 		category: "web-app",
 	},
 	{
-		id: 8,
+		id: 10,
 		title: "Portfolio Website",
 		description:
 			"Modern Next.js portfolio website built with Framer animations. Responsive, modern design with interactive UI and smooth transitions.",
@@ -100,7 +120,7 @@ const projects = [
 		category: "web-app",
 	},
 	{
-		id: 9,
+		id: 11,
 		title: "Hotel Website (SkyInn)",
 		description:
 			"Created a MERN Stack hotel booking and food ordering platform supporting 500+ concurrent users, with Socket.io for real-time updates and Redux ensuring 25% improved data consistency.",
@@ -110,7 +130,7 @@ const projects = [
 		category: "web-app",
 	},
 	{
-		id: 10,
+		id: 12,
 		title: "Salon Port",
 		description:
 			"A dashboard for tracking salons, expenses, and investments with data visualization and comprehensive business analytics.",
@@ -122,7 +142,7 @@ const projects = [
 
 	// Computer Vision / OCR Projects
 	{
-		id: 11,
+		id: 13,
 		title: "Publix Bill Scanner",
 		description:
 			"Captures bill images, runs OCR, and extracts itemized data. Displays extracted info in a local web app for easy expense tracking.",
@@ -134,7 +154,7 @@ const projects = [
 
 	// Systems & Tools
 	{
-		id: 12,
+		id: 14,
 		title: "Custom Version Control System",
 		description:
 			"Git-like version control system implementing add, merge, commit, and push features. Built from scratch to understand Git internals and distributed version control.",
@@ -222,7 +242,7 @@ export default function WorkPage() {
 								<div className="text-sm text-muted-foreground">Technologies</div>
 							</div>
 							<div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-4 hover:shadow-lg transition-all duration-300">
-								<div className="text-2xl md:text-3xl font-bold text-red-500">400k +</div>
+								<div className="text-2xl md:text-3xl font-bold text-red-500">500k +</div>
 								<div className="text-sm text-muted-foreground">Lines of Code</div>
 							</div>
 						</motion.div>

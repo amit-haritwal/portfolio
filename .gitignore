@@ -1,3 +1,17 @@
 /node_modules
 /.next
 package-lock.json
+npm-debug.log
+.DS_Store
+.vscode
+.env
+.env.local
+.env.production
+.env.development
+.idea
+*.iml
+out
+dist
+coverage
+*.log
+.next/
