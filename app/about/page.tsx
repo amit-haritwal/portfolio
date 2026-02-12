@@ -342,24 +342,34 @@ export default function AboutPage() {
 								{[
 									{
 										title: "Senior Full Stack Developer",
-										company: "Global Lancers",
-										period: "September 2023 - June 2024",
-										description: "Led development of multiple web applications using React, Next.js, and Node.js. Implemented CI/CD pipelines, mentored junior developers, and worked extensively with collaborative editing features.",
+										company: "Dell Technologies",
+										period: "Jan 2026 - Present",
+										description: "
+												• Developing enterprise-scale frontend applications using React.js, Next.js, TypeScript, HTML5, CSS3, and Tailwind, contributing to scalable customer-facing platforms.
+												• Building reusable UI components and design-system-aligned modules to ensure consistency and faster feature delivery across applications.
+												• Integrating REST and GraphQL APIs with backend microservices to enable dynamic, data-driven user interfaces.
+												• Implementing state management solutions (Redux Toolkit, React Query, Context API) to improve application scalability and maintainability.
+												• Applying frontend performance optimization techniques such as code splitting, lazy loading, and bundle optimization to enhance application responsiveness.
+												• Writing unit and integration tests using Jest and React Testing Library to maintain code quality and application stability.
+												• Collaborating in Agile/Scrum environments with product managers, UX designers, and backend teams to deliver new features and enhancements.
+											",
 										skills: ["React", "Next.js", "Node.js", "Collaboration Tools", "CI/CD"],
 									},
 									{
 										title: "Full Stack Developer",
-										company: "Imonology",
-										period: "March 2023 - May 2023",
-										description: "Developed and maintained client websites and web applications. Worked with React, Express, and MongoDB to create scalable solutions with real-time features.",
+										company: "CueTech Systems",
+										period: "Jan 2020 - May 2024",
+										description: "
+														• Developed responsive enterprise web applications using React.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, and Bootstrap/Tailwind, improving UI performance and usability across desktop and mobile devices.
+														• Built reusable component libraries and scalable frontend architecture, reducing development time for new features by standardizing UI modules.
+														• Integrated RESTful APIs and backend microservices (Node.js/Express) to enable dynamic data rendering and real-time user interactions.
+														• Implemented state management solutions (Redux, Context API) to improve application scalability and maintainability across multi-module platforms.
+														• Optimized application performance through lazy loading, code splitting, caching strategies, and bundle optimization, significantly improving page load times and Core Web Vitals.
+														• Collaborated with cross-functional Agile teams to translate business requirements into user-centric frontend features, accelerating sprint delivery timelines.
+														• Developed unit and integration tests using Jest and React Testing Library, improving application stability and reducing production defects.
+														• Participated in CI/CD deployment workflows using Git, Jenkins, and Docker, enabling faster and more reliable application releases.
+												",
 										skills: ["React", "Express", "MongoDB", "Real-time Features"],
-									},
-									{
-										title: "Frontend Developer",
-										company: "Appykan",
-										period: "August 2022 - August 2023",
-										description: "Built responsive user interfaces using React and CSS. Collaborated with designers to implement pixel-perfect designs and integrated dynamic content rendering.",
-										skills: ["React", "CSS", "Dynamic Content", "UI/UX"],
 									},
 								].map((job, index) => (
 									<motion.div
